@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scnool Guidelines</title>
+</head>
+<style>
+    .academicSubject{
+        background-color: midnightblue;
+        width:173.5px; 
+        height:60px;
+        font-size: 20px;
+        color:white;
+        font-weight: bold; 
+        margin-left:-5px; 
+        float:left;
+        border: black 1px solid;
+        cursor: pointer;
+    }
+    .subjectButton button:focus{
+        background-color: rgb(46, 46, 177);
+        color:greenyellow;
+        border:5px lightgreen solid;
+    }
+    .strand{
+        font-weight: bold; 
+        font-size:30px;
+        margin-left: -20px;
+        justify-content: center;
+    }
+    .strandImage{
+        width:130px;
+        height:130px;
+        border-radius: 10px;
+        border: black 2px solid;
+    }
+    .arrowInfo{
+        color:orange; 
+        font-size: 13px;
+    }
+    .downBarInfo{
+        border:none; 
+        background-color: transparent; 
+        color:gray;
+        text-align: start;
+        font-size:15px;
+        margin-left:65px;
+    }
+    .downBarP p:hover{
+        color:orange;
+    }
+    .info{
+        background-color: transparent;
+        color: white;
+        font-size: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .page1 button{
+        border:0;
+        background-color: transparent;
+    }
+    .linkText em{
+        color:rgb(161, 13, 149);
+        cursor:pointer;
+    }
+    .linkText em:hover{
+        border-bottom:thin solid rgb(161, 13, 149) ;
+    }   
+    #myAbout{
+        display:none
+    }
+    #frontImage {
+        display:block;
+    }
+    
+    .titleAbout{
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .titleGuidelines{
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 40px;
+    }
+    .textGuidelines{
+        display:flex; 
+        align-items: center; 
+        margin-right: 60px; 
+        margin-left: 60px;
+    }
+    .typesBullying{
+        padding:10px;
+        position:relative; 
+        top:120px;
+        border: black 2px solid; 
+        background-color: rgb(211, 201, 201);
+    }
+    .imageGuidelines{
+        position: relative; 
+        margin-left: 100px; 
+        border: black 3px solid;
+        width: 400px;
+        height: 400px;
+    } 
+</style>
+<body style="margin: 0;background-color:white;">
+    <div class = "upBar" style="display: flex; padding: 20px; max-height: 30px; align-items: center; background-size: 15px 15px; background-color:midnightblue;">
+        <img src="growbox.png" alt="growbox.png" width="70px">
+        <div class = "title" style="cursor: default; color: white; font-size: 30px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+            <p id="home" onclick="showNavButton(this)" style="cursor:pointer;color: red(Box);">GrowBox</p>
+        </div>
+        <div class="page1" style="max-height: 16px; margin-left: 400px; margin-top: 10px;">
+            <div>
+                
+                <button id="btn1" onclick="showNavButton(this)">
+                    <span id="about" class="info">A b o u t</span>
+                </button>
+                <span style="color:rgb(179, 177, 174); cursor: default" >/</span>
+                <button id="btn2" onclick="showNavButton(this)">
+                    <span id="academics" class="info">A c a d e m i c s</span>
+                </button>
+                <span style="color:rgb(179, 177, 174); cursor: default">/</span>
+                <button id="btn3" onclick="showNavButton(this)">
+                    <span id="enrollment" class="info">E n r o l l m e n t</span>
+                </button>
+                <span style="color:rgb(179, 177, 174); cursor: default">/</span>
+                <button id="btn4" onclick="showNavButton(this)">
+                    <span id="guideline" class="info">G u i d e l i n e s</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative;">
+        <div id="frontImage" class="frontImage">
+            <div id="scroll-image">
+                <div id="firstPage" style="display:block">
+                    <img class="test" id="frontImage"  src="school-frontpage.jpg" alt="school-frontpage.jpg" style="width:100%; height: 562px; float:inline-start;"">
+                    <div style=" justify-content: center; align-items: center;position: absolute; top: 100px;left:400px;  color: white; font-size:70px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                        <p>GROWBOX FRESHMEN ADMISSION <span style="color: red">2024</span></p>
+                    </div>
+                </div>
+                <div id="secondPage" style="display:none;">
+                    <img class="test" src="secondImage.png" alt=secondImage.png style="width:100%; height: 562px; float:inline-start;">
+                </div>
+                <div id="thirdPage" style="display:none;">
+                    <img class="test" src="enrollment.png" alt=enrollment.png style="width:100%; height: 562px; float:inline-start;">
+                </div>
+            </div>
+            <button onclick="arrowButton(this)" id="left" class="arrowButton" style="position: relative;border-radius: 50px; background-color:transparent; top: -310px; margin-left:40px;">
+                <img src="arrow.jpg.png" width="40px" height="50px" style="transform: scaleX(-1)">
+            </button>
+            <button id="right" onclick="arrowButton(this)" class="arrowButton" style="position: relative;border-radius: 50px; background-color:transparent; top: -310px; margin-left:1150px;">
+                <img src="arrow.jpg.png" width="40px" height="50px" style="transform: scaleX(1)">
+            </button>
+        </div>
+        <div id="myAbout" style="display:none;background-color: white(48, 48, 94); width: 100%; height: 400px;   color: white;">
+            <img class="frontImage" src="aboutPage.jpg" alt="school-frontpage.jpg" style="width:30%; height: 271px; float:inline-start; border: black 5px solid;">
+            <div style="position: absolute; left:420px; text-align: center; align-items: center; justify-content: center;font-size: 15px; font-weight: bold; float:inline-start;">
+                <p>*<span style="color: red;">GrowBox School</span> is the educational institution designed to provide learning spaces and learning environments for the teaching of students under the direction of teachers. We have systems of formal education. In these systems, students progress through a series of schools that built and operated by <span style="color: red;">GrowBox Organization</span>. We also have an institution where higher education is taught is commonly called a university college or university.</p>
+                <p>*<span style="color: red;">GrowBox School</span> is an educational establishment created to offer classrooms and other learning environments where students can receive instruction from teachers. There are formal schooling systems in place. Under these systems, learners move through a sequence of educational institutions developed and run by <span style="color: red;">GrowBox Organization</span>. We also have a facility known as a university, college, or university where further education is offered.</p>
+            </div>
+            <div style="border: black 2px solid; max-height: 20px; padding:141px;color: white; background-color:rgb(55, 55, 97); text-align: center;">
+            </div>
+            
+            <div style="position: relative; text-align: center;color:black;">
+                    <p class="titleAbout" style="position: relative; right:445px; ">Vision</p>
+                    <p style="position: absolute; right:900px; bottom:-55px; margin-left:20px; float:left">A local government university with global quality of education imbued with desired knowledge, skills, and values for academic excellence, professional development, civic consciousness, resilient citizenry, technological advancement, ecological sustainability and continual improvement.</p>
+                    <p class="titleAbout" style="position: relative; left:435px; bottom:58px">Mission</p>
+                    <p style="position:absolute; left: 900px; bottom:-113px; margin-right:20px; float:right">To develop academically excellent, professionally progressive, industry sensitive, environmentally and technologically conscious, globally competitive and resilient graduates through quality instruction, functional co-curricular activities, responsive community immersion programs, intensive research and development and continually improved quality management system molding them to become effective social and cultural agents of change.</p>
+            </div>
+        </div>
+        
+        <div id="myGuidelines" style="display:none; background-color: lightblue;">
+            <hr>
+            <p style="display:flex; text-align: center; align-items: center; justify-content: center; font-size: 30px; font-weight: bold;">School Guidelines</p>
+            <hr>
+            <p class="titleGuidelines">Attendance</p>
+            <p class="textGuidelines">We seek your cooperation in impressing upon your children the importance of attending school regularly and "being on time." We ask you to please avoid scheduling appointments for your child during school hours. In the event that such an appointment need be scheduled, please send a note with your child on the day of the appointment. Parents must pick up their child before 2:45 p.m. Parents who pick up their children early must come to the second floor office in order to sign the child out.</p>
+            <p class="textGuidelines">Children who are absent from school must present a note explaining their absence, to the homeroom teacher on the day of their return to school. To avoid gaps in learning during absence, arrange with a classmate to bring home assignments and needed books. Students who arrive past 8:00 a.m. must sign in.</p>
+            <p class="textGuidelines">We are sure that you realize that the success of our school program is impaired by excessive and unnecessary interruptions. We urge that you help your child develop a good record of attendance and punctuality.</p>
+            <img class="imageGuidelines" src="attendance.png" alt="attendance.png">
+            <p class="titleGuidelines">Birthday Celebrations</p>
+            <p class="textGuidelines">In School Birthday Celebrations - Teachers of kindergarten and first grade arrange a monthly birthday celebration for all of the students whose birthdays occur during the month. Parents are usually contacted and asked to supply a portion of the items necessary for the celebration. No other birthday parties are held in school. All students’ birthdays are acknowledged on a daily basis with the presentation of birthday ribbons at morning minyan.</p>
+            <img class="imageGuidelines" src="birthday.png" alt="birthday.png">
+            <p class="titleGuidelines">Care of School Property</p>
+            <p class="textGuidelines">Inculcating respect for the school and school property (building, desks, textbooks) is part of educational program, and we enlist the aid of parents in emphasizing these values to their children. Please help us in preserving the cleanliness and decor of our building.</p>
+            <img class="imageGuidelines" src="cleanliness.png" alt="cleanliness.png" >
+            <p class="titleGuidelines">Cell Phone / Electronic Device Policy</p>
+            <p class="textGuidelines">Cell phones/electronic devices may serve as an outstanding instructional tool and learning resource if used appropriately. We also understand that parents want to be able to communicate with their children in case of an emergency. However, those devices have become tremendous distractions for the learning environment of the school and have been used inappropriately in school (cyber bullying, texting, making phone calls, taking pictures of students and teachers, playing games during instruction). Additionally, over the years, students have increasingly been refusing to abide by the liberal cell phone/electronic device policy that presently exist in our school. It is therefore necessary for us to address the problem by developing a clear cell phone/electronic device policy for SSSQ. Parents must recognize that unless we deal with the problem, we will have difficulty in providing the organization and order necessary for a safe school climate and a good classroom environment.</p>
+            <p class="textGuidelines">The cell phone/electronic device policy listed below has been approved by the school’s Board of Trustees and the PTA.</p>
+            <p class="textGuidelines">1. Students may have cell phones/electronic devices in school, but they must be turned off from the time they arrive at school until dismissal at 3:20 PM and must be kept completely out of sight. Cell phones may not be carried in students’ pants pockets, jackets, or placed in their desks. They must be stored in their locker or in their book bag. Cell phones may not be used during recess or lunch period.</p>
+            <p class="textGuidelines">2. Cell phones/electronic devices may only be used for educational purposes in the classroom setting and with the permission of the teacher.</p>
+            <p class="textGuidelines">3. Students may turn on their cell phones/electronic devices only when they are at their dismissal location. They may not be used while walking in the hallways or staircases when walking to the dismissal area.</p>
+            <p class="textGuidelines">4. In the event of an emergency, students will be given authorization by a teacher to use their cell phone.</p>
+            <p class="textGuidelines">5. Parents who may need to communicate an important message to their children during the hours of 8:00 AM and 3:20 PM should call the main office. If students need to contact a parent for an important reason, they should go to the main office and ask a secretary to call home for them.</p>
+            <p class="textGuidelines">6. Should a cell phone ring, vibrate or be used for any reason during the school day without teacher permission, or is visible anytime during the school day, it will be confiscated and given to an administrator.</p>
+            <img class="imageGuidelines" src="cellphone.png" alt="cellphone.png">
+            <p class="titleGuidelines">Choir</p>
+            <p class="textGuidelines">The school choir is directed by our music teacher. It is open to children in grades 4-8 by audition. The choir meets once a week for rehearsals. They perform al various school and community functions during the school year. Children in the choir must have a white collared shirt or turtle neck shirt and navy skirt (girls) or navy pants (boys).</p>
+            <img class="imageGuidelines" src="choir.png" alt="choir.png">
+            <p class="titleGuidelines">Continuation of Enrollment</p>
+            <p class="textGuidelines">At any time during a child's attendance at Schechter, continued admission can be denied due to academic or behavioral concerns or due to a family's failure to cooperate with school policies. As a school, we are committed to working with the whole child. We understand that matching a child to the appropriate school can be a complicated undertaking. Therefore, after admitting your child, we monitor his/her academic and social progress carefully.</p>
+            <p class="textGuidelines">Administrators and other professionals work with your child's teachers to make sure that we can continue to meet your child's needs. Sometimes, we cannot. If this is the case because of an academic or behavioral concern, the school will make timely contact with you so that you can make appropriate arrangements for the following year.</p>
+            <img class="imageGuidelines" src="continuation.png" alt="continuation.png">
+            <p class="titleGuidelines">Discipline</p>
+            <p class="textGuidelines">Rules and regulations are established in any institution to indicate the limits of acceptable social behavior. Discipline in the school is a prerequisite to the creation of an effective learning atmosphere.</p>
+            <p class="textGuidelines">The following is a list of disciplinary procedures:</p>
+            <p class="textGuidelines">1. A child may be referred to one of the principals. Records of such referrals are kept.</p>
+            <p class="textGuidelines">2. Parents may receive notification of persistent problems and may be required to attend a conference.</p>
+            <p class="textGuidelines">3. Guidance services may be sought. When this is deemed necessary parental approval is sought.</p>
+            <p class="textGuidelines">4. Referral for outside testing or counseling: In some cases if a behavior persists, the administration may recommend that the child be referred to an outside facility for diagnostic testing and follow-up.</p>
+            <p class="textGuidelines">5. Removal from class or suspension from school: When unacceptable behavior persists, or on those occasions when a child commits an act which endangers the health and safety of other children (e.g. fighting), or a member of the faculty or destroys school property, it may become necessary to suspend the child from school. If a student's behavior results in a second suspension the same academic year, the suspension shall be for multiple days. If a third incident occurs, a guidance hearing will be held which will include the parents of the child, a member of the administrative staff and the Vice President of Education for consideration of expulsion from the school.</p>
+            <img class="imageGuidelines" src="discipline.png" alt="discipline.png">
+            <p class="titleGuidelines">Dress Code</p>
+            <p class="textGuidelines">The Board of Education of our school adopted the following dress code for grades K-8. Most schools have found that children who are appropriately dressed and groomed have a more wholesome attitude towards school, and do better academically. The underlying rationale for the Dress Code is that dignity and propriety are called for in the children=s house of learning and house of prayer. Solomon Schechter’s dress code stresses a comfortable, clean, and neat appearance. Students are required to adhere to the dress code during the school year. We request your cooperation in helping us implement the school’s dress code.</p>
+            <p class="titleGuidelines">Evaluation and Services</p>
+            <p class="textGuidelines">1. Testing - Standardized achievement tests are given annually to students in grades 2-8. Additional tests required by the State Education Department and the New York City Department of Education are given also at the appropriate times. Parents recieve notification of test dates as well as results of the tests in school mailings. If needed, conferences are scheduled to discuss the results.</p>
+            <p class="textGuidelines">The school maintains a list of professionals in the areas of psychological and educational testing and therapy. If you would like such information, you may call one of the school administrators or the school psychologist.</p>   
+            <p class="textGuidelines">If your child is evaluated by an outside professional, it is important for the school to have this information. A parent must request that a report be sent to the school in care of the Headmaster.</p>
+            <p class="textGuidelines">2. Psychological Assessment - During the Spring, a psychological assessment is administered by a licensed certified school psychologist to all students entering first grade, or students new to our school. There is a nominal fee for this service.</p>
+            <p class="titleGuidelines">Extra-Curricular Activities</p>
+            <p class="textGuidelines">The school offers a number of after school clubs for students of all grades for a nominal fee. Participation in clubs is optional. A notice is sent home at the beginning of October, and January, listing all clubs offered for each term. The child may be enrolled when payment and parental permission is received. Each club term consists of approximately ten sessions, which begin at 3:30 p.m., and end at 4:30p.m. On short Fridays clubs begin at 1:30p.m. and end a 2:30 p.m. The parent must provide all transportation for after school clubs.</p>
+            <p class="titleGuidelines">Health</p>
+            <p class="textGuidelines">Children coming to school are assumed to be healthy enough to attend the full day's program, including recess and physical education. If a child becomes ill or injured in school, parents will be notified if considered necessary by the school nurse or school administrator. In case a parent is not available the designated emergency contact person will be called. When you are asked to pick up your child, please respect the judgment of the nurse in these situations. The request to take home a child due to illness or injury is motivated by wanting to do what is best for the child and for his/her classmates. Please make sure that the medical records and emergency information on file in the school are kept up to date.</p>
+            <p class="titleGuidelines">CHILDREN'S HEALTH/IMMUNIZATION RECORDS</p>
+            <p class="textGuidelines">Before a child is enrolled at SSSQ, the parent(s) must provide documentation of their child's immunizations and physical examination on the medical form provided in the registration packet. These forms must be completed and signed by a physician before your child begins attending our school. The health immunization form must be updated by the physician and given to the nurse as a child receives new immunizations.misc_131452</p>
+
+            <p class="titleGuidelines">Anti-Bullying Policy</p>
+            <p class="textGuidelines">The school maintains a zero tolerance policy against any form of bullying. This includes verbal abuse, physical abuse, written messages or cyber-bullying. Upon report and confirmation of an allegation, successive steps of interventions will begin. These interventions will include conferences with child and/or parent by an administrator or the guidance counselor, suspension and eventual expulsion from school.
+            </p>
+            
+            <p style="margin-left:20pxx"><strong>Contanct No. of Guidance Office</strong>:632-252844</p>
+            <img class="imageGuidelines" src="bullying.png" alt="bullying.png">
+                
+            <p style=" text-align: center; align-items: center; justify-content: center; font-size: 30px; font-weight: bold; color: red">Types of Bullying</p>
+           
+            
+            <div style="position: relative; margin-left:60px;margin-bottom:160px ;">
+                <button class="typesBullying" style="left:90px; ">
+                    <p  style="font-weight: bold;">Threat</p>
+                    <img src="threat.png" alt="threat.png" width="200px" height="200px" style="border: black 2px solid;">
+                </button>
+                <button class="typesBullying" style="left:130px">
+                    <p  style="font-weight: bold;">Physical Bulyling</p>
+                    <img src="physical.png" alt="threat.png" width="200px" height="200px" style="border: black 2px solid;">
+                </button>
+                <button class="typesBullying" style="left:170px">
+                    <p  style="font-weight: bold;">Relational Bullying</p>
+                    <img src="relational.png" alt="threat.png" width="200px" height="200px" style="border: black 2px solid;">
+                </button>   
+                <button class="typesBullying" style="left:210px;">
+                    <p  style="font-weight: bold;">Racial Bullying</p>
+                    <img src="racial.png" alt="threat.png" width="200px" height="200px" style="border: black 2px solid;">
+                </button>
+            </div>
+            <div style="background-color: red;padding:40px">
+
+            </div>
+        </div>
+        <div id="myAcademics" style="display:none;background-color: lightblue;">
+            <div>
+                <hr style="margin-left:-20px">
+                <p style="font-weight: bold; font-size:30px; text-align: center; border-radius: 20px;">SENIOR HIGH SCHOOL STRAND</p>           
+                <hr style="margin-left:-20px">
+                <div class="subjectButton" style="margin-top:-9px;">
+                    <button id="stemButton" class="academicSubject" onclick="showSubject(this)">STEM</button>
+                    <button id="ictButton" class="academicSubject" onclick="showSubject(this)">ICT</button>
+                    <button id="abmButton" class="academicSubject" onclick="showSubject(this)">ABM</button>
+                    <button id="humssButton" class="academicSubject" onclick="showSubject(this)">HUMSS</button>
+                    <button id="gasButton" class="academicSubject" onclick="showSubject(this)">GAS</button>
+                    <button id="heButton" class="academicSubject" onclick="showSubject(this)">HE</button>
+                    <button id="iaButton" class="academicSubject" onclick="showSubject(this)">IA</button>
+                    <button id="afaButton" class="academicSubject" onclick="showSubject(this)">AFA</button>
+                </div>
+                <hr style="margin-top:-1px">
+                <div class="seniorHighStrand" style="margin-left:60px; margin-right: 60px; padding:30px">
+                    <div id="academicPage" style="padding:190px; background-color: transparent; margin-right:20px; margin-bottom:20px;" style="position: block;">
+
+                    </div>
+                    <div id="stem" style="display:none">
+                        <p class="strand">STEM(Science, Technology, Engineering, Math)</p>
+                        <p>STEM education is a teaching approach that combines science, technology, engineering and math. Its recent successor, STEAM, also incorporates the arts, which have the "ability to expand the limits of STEM education and application," according to Stem Education Guide. STEAM is designed to encourage discussions and problem-solving among students, developing both practical skills and appreciation for collaborations, according to the Institution for Art Integration and STEAM.<br>
+                        <br>Rather than teach the five disciplines as separate and discrete subjects, STEAM integrates them into a cohesive learning paradigm based on real-world applications. <br>
+                        <br>According to the U.S. Department of Education "In an ever-changing, increasingly complex world, it's more important than ever that our nation's youth are prepared to bring knowledge and skills to solve problems, make sense of information, and know how to gather and evaluate evidence to make decisions."         
+                        </p>
+                        
+                        <p style="font-weight: bold; font-size:20px">Science</p>
+                        <p class="linkText">Your STEM classes expose you to basic science subjects, laboratory work, research, and the like. Thats why there is many science courses that you can choose in college. Taking a science course is the next step you can take if you want to pursue a career in the <em href="#" onClick="window.open('https://bukas.ph/blog/7-in-demand-medical-careers-in-the-philippines-you-should-consider/', '_blank')">medical field</em>. Medical professionals are key contributors in the science field, from health and wellness to research and development.</p>
+                        <p></p>
+                        <p>Here are some Science courses you can choose from:</p>
+                        <ul>
+                            <li>BS Nursing</li>
+                            <li>BS Medical Technology</li>
+                            <li>BS Pharmacy</li>
+                            <li>BS Food Technology</li>
+                            <li>BS Environmental Science</li>
+                            <li>BS Chemistry</li>
+                        </ul>
+                        <p style="font-weight: bold; font-size:20px">Information and Communications Technology</p>
+                        <p class="linkText">If you enjoyed your coding classes in SHS, consider pursuing an information and communications technology (ICT) course. You’ll come across subjects like programming, data analytics, and web development among others. Shameless plug: With Bukas’ partner schools, you can also enroll in ICT-related <em href="#" onclick="window.open('https://bukas.ph/blog/kickstart-your-tech-career-with-uplift-code-camp/','blank')">bootcamps or short courses</em>!</p>
+                        <p>Here are some ICT courses you can choose from:</p>
+                        <ul>
+                            <li>BS Entertainment and Media Computing</li>
+                            <li>BS Information Science</li>
+                            <li>BS Data Science</li>
+                            <li>BS ESports</li>
+                            <li>BS Information Technology</li>
+                        </ul>
+                        
+                        <p style="font-weight: bold; font-size:20px">Engineering</p>
+                        <p>If you have a knack for problem solving, taking an engineering course might just be for you. Most of your classes in SHS already established the foundations for engineering as a field of study. Mula Calculus hanggang Trigonometry. An engineering course will deepen your knowledge and skills on these subjects. In a nutshell, you’ll be learning how to make structures and systems that make people’s lives easier. If the challenge of innovation excites you, engineering is the way to go!</p>
+                        <p class="linkText">Here are some <em href="#" onclick="window.open('https://bukas.ph/blog/10-engineering-courses-in-the-philippines/','blank')">engineering courses</em> you can choose from:</p>
+                        <ul>
+                            <li>BS Materials Engineering</li>
+                            <li>BS Electronics and Communications Engineering</li>
+                            <li>BS Chemical Engineering</li>
+                            <li>BS Mechanical Engineering</li>
+                            <li>BS Geodetic Engineering</li>
+                        </ul>
+                        
+                        <p style="font-weight: bold; font-size:20px">Mathematics</p>
+                        <p>Mathematics courses equip students with advanced numerical and analytical skills. They cover the foundations of mathematics such as algebra, geometry, logic, abstract thinking and more. In short, everything you need to know about mathematical computing and modeling. Pursuing a degree in mathematics will definitely feed your love for numbers!</p>
+                        <p>From banking to research, your mathematics skills can be applied to many fields. There are mathematics courses that can lead you to a teaching career too.</p>
+                        <p>ere are some mathematics courses you can choose from:</p>
+                        <ul>
+                            <li>BS Applied Mathematics</li>
+                            <li>BS Mathematics</li>
+                            <li>BS Statistics</li>
+                            <li>BS Secondary Education (major in Mathematics)</li>
+                        </ul>
+                        <hr style="margin-left:-20px;">
+                    </div>
+
+                    <div id="ict" style="display:none">
+                        <p class="strand">ICT(Information and Communication Technology)</p>
+                        <p>ICT, or information and communications technology (or technologies), is the infrastructure and components that enable modern computing. Among the goals of IC technologies, tools and systems is to improve the way humans create, process and share data or information with each other. Another is to help them improve their abilities in numerous areas, including business; education; medicine; real-world problem-solving; and even leisure activities related to sports, music, and movies.</p>
+                        <p>There is no single, universal definition of ICT because the technologies, devices and even ideas related to ICT are constantly evolving. However, the term is generally accepted to mean all devices, networking components and applications. When combined, these help people and organizations interact in the digital world.</p>
+
+                        <p><strong>SCHOOL ICT LAB</strong></p>
+                        <div>
+                            <img src="ictlab.jpg" alt="ictlab.jpg" width="560px" style="border: 2px black solid">
+                        </div>
+                        <p style="font-weight: bold; font-size: 25px">Courses you can take in College</p>
+                        <ol>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Computer Science (BSCS)</li>
+                        <p>Ever wonder how computers work? Computer science is the answer. This explains how your alarm clock knows when to wake you up, how search engines like Google give you a million results in less than a second, how Facebook lets you stalk, este talk, to a friend from a screen o kaya naman how marketing ads suggest your next budol finds based on your previous activities. A computer scientist programmed it that way.<p>
+                        <p>n simpler terms, computer science is the study of how computers think–and then teaching it what to do through programming. Computer scientists are problem solvers. They use algorithms to fix and prevent problems so users like you can use your phone, laptop, or app without errors. Kung mahilig ka sa problema, as in computing problems and those that require logical thinking, this might interest you!</p>
+                        <p><strong>Carreers are available for BSCS Graduates:</strong></p>
+                        <ul>
+                            <li>Quality Assurance Specialist</li>
+                            <li>Research and Development Computing Professional</li>
+                            <li>Software Engineer</li>
+                            <li>Software Support Specialist</li>
+                            <li>System Analyst</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Information Technology (BSIT)</li>
+                        <p>Another popular course in the ICT and Computer Science fields is Information Technology. Maraming students ang nalilito between Computer Science and IT–and for good reason! Pareho lang naman sa computer yun, diba? Correct. However, BS IT students are being equipped with knowledge and skills for both hardware and software technologies. Mula planning, installing, operating, hanggang maintaining IT infrastructures.</p>
+                        <p>Simply put, IT professionals are who you call kapag meron kang hardware issues with your wifi routers or power supply and, at the same time, kapag may problema ka with your web server or computer softwares. IT professionals got you covered!</p>
+                        <p><strong>Carreers are available for BSIT Graduates:</strong></p>
+                        <ul>
+                            <li>Applications and Web Developer</li>
+                            <li>Information Security Administrator</li>
+                            <li>IT Audit Assistant</li>
+                            <li>Network Engineer</li>
+                            <li>Systems Integration Personnel</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Computer Engineering (BSCE)</li>
+                        <p>Our third course may be found under the Engineering department of schools but it’s still a viable stepping stone for an ICT and Computer Science career. Kung iniisip mo what this course is about, the program title gives it away! BS CE is literally the study of computer science and engineering rolled into one exciting course–equipping students with both programming and engineering skills.</p>
+                        <p>Computer engineers are your experts in electronics hardware. Since they are well versed in both fields, the sky's the limit when it comes to their work. Think phones, computers, planes, cars, robots. Pati artificial intelligence, pasok! If this sounds like the future you want to build, computer engineering might be for you.</p>
+                        <p><strong>Carreers that are available for BSCE</strong></p>
+                        <ul>
+                            <li>Computer Software Engineer</li>
+                            <li>Computer System Analysts</li>
+                            <li>Computer and Information Systems Manager</li>
+                            <li>Software Application Developer</li>
+                            <li>Software Systems Developer</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Information Science (BSIS)</li>
+                        <p>If computer engineering applies technology in engineering, information science applies technology in business. The BS IS program bridges the technical side of technology to business people para matulungan sila to operate efficiently and effectively. Imagine kung walang sistema, there would be chaos! That’s where information scientists come into the picture and make sure the systems are in place and processes are working properly. They are the experts who gather, process, and distribute information.</p>
+                        <p>For example, isipin mo kung paano mo inaayos ang school files mo sa computer after every online class. What labels do you use? How do you name your folders? Where do you place certain files? Kung meron kang system to do it, good job ka diyan! That’s information science right there. Now imagine doing it for a million-dollar company with thousands of new information everyday–that’s a job for an information scientist.</p>
+                        <p><strong>Carreers that are available for BSIS</strong></p>
+                        <ul>
+                            <li>Computer Systems Analyst</li>
+                            <li>Database support personnel</li>
+                            <li>Information Architect</li>
+                            <li>Information Security Analyst</li>
+                            <li>Network Administrator</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Data Science (BSDS)</li>
+                        <p>From information science to data science real quick! We already know that we produce massive data every day. Buksan mo lang yung Facebook account mo pagkagising or binge watch a K-Drama episode after every homework–it’s already considered data. Ang tanong, anong gagawin natin sa data na yun? Data science answers that question. It’s an interdisciplinary field that combines data science and data mining to solve problems.</p>
+                        <p>When a business or an organization encounters a problem, the answer lies in their data. Kapag nag-aral ka ng data science, tuturuan ka to think and solve problems using data. You’ll learn how to uncover patterns and gain insights from a given data, and analyze it using data visualization tools. In a way, para kang detective! But instead of fingerprints and evidence to solve a crime, you have data to solve a problem.</p>
+                        <p><strong>Carreers that are available for BSDS</strong></p>
+                        <ul>
+                            <li>Business Intelligence Engineer</li>
+                            <li>Data Analyst</li>
+                            <li>Database Developer</li>
+                            <li>Planning and Decision Analyst</li>
+                            <li>Statistician</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in Entertainment and Media Computing (BSEMC)</li>
+                        <p>Whoever said that ICT and Computer Science are all about numbers, algorithms, and headaches clearly haven’t met EMC professionals. While careers in the field weigh more on the technical side, creativity is a crucial part of the equation. Lalo na para sa mga BS EMC students!</p>
+                        <p>The BS EMC program is the study and use of computer science in designing and developing multimedia products across industries like entertainment and advertising. Kung naglalaro ka ng Animal Crossing, Mobile Legends or kung ano man ang favorite game mo–there are EMC professionals who made it happen! If this course interests you, pwede kang pumili between digital animation technology and game development.</p>
+                        <p><strong>Carreers that are available for BSEMC</strong></p>
+                        <ul>
+                            <li>Creative/Graphics Programmer</li>
+                            <li>Digital 2D/3D Animation Content Producer</li>
+                            <li>Game Sound Engineer</li>
+                            <li>Game Quality Assurance Specialist</li>
+                            <li>Technical Director/Game Designer</li>
+                        </ul>
+                        <br>
+                        <li style="font-weight: bold; font-size:20px">Bachelor of Science in ESports (BSE)</li>
+                        </ol>
+                    </div>
+
+                    <div id="abm" style="display:none">
+                        <p class="strand">ABM (Accountancy, Business and Management)</p>
+                        <p>The Accountancy, Business, and Management Strand—or ABM strand—seeks to prepare the young business leaders of tomorrow. ABM strand paves the way for business-related college degrees. It teaches the basic concepts of financial management, accounting, and corporate operations. The programs under this strand aims to instill crucial skills that one needs to perform well in their future careers and businesses.</p>
+                        <p>Learning about business and finance might be challenging. Nevertheless, taking ABM strand programs will help young entrepreneurs, like you, to adopt the right mindset for brighter careers. Read on to know more about this strand.</p>
+                        <p>Students who take on this strand can expect its focus to be on business-related classes. This prepares them for management and accounting-related courses in their tertiary education. This strand was designed to provide students with an in-depth understanding of business principles to prepare them for future studies. </p>
+                        <p>The ABM strand aims to prepare those students who are interested in pursuing business-related college degrees. It highlights both business and finance subjects to equip students in the knowledge they need for a future in business.</p>
+                        <p><strong>SCHOOL MARKET</strong></p>
+                        <img src="market.jpg" alt="market.jpg" width="560" style="border:2px black solid" >
+                    </div>
+
+                    <div id="humss" style="display:none">
+                        <p class="strand">HUMSS (Humanities and Social Sciences)</p>
+                        <p>The HUMSS strand in senior high school is designed to effectively prepare students who seek to pursue a college degree in liberal education. HUMSS courses cover a variety of subjects, looking at the world and its people from various points of view. The learning activities are directed towards the development of critical thinking.</p>
+                        <p>HUMSS also focuses on developing your oral communication, media and information, and will hone your skills in reading and writing to a professional level. Because the HUMSS strand is intended for those who wish to explore careers in social sciences, this strand will involve a lot of research and presentation, making it a good preparation for their future careers as journalists, lawyers, teachers, politicians, writers, and psychologists.</p>
+                        <p><strong>The Objectives of the HUMSS Strand</strong></p>
+                        <p>The HUMSS strand curriculum was developed to equip senior high school students looking to pursue more sociological and artistic careers in their future with the necessary skills and confidence. Students enrolled in HUMSS strand courses can expect to:</p>
+                        <ul>
+                            <li>Acquire the appropriate mindset and theorems for understanding the psyche and behavior of people across different backgrounds</li>
+                            <li>Build their confidence in articulating their various ideas and expressing themselves through both written and spoken language in both scholarly and secular work</li>
+                            <li>Provide them with the means to gaining the necessary rapport with their future patients, clients, audiences, and other stakeholders depending on their profession of choice.    </li>
+                        </ul>
+                        <p>At OEd, we wish to equip our students to communicate articulately, think critically, and exercise sensitivity and empathy in their professional endeavors.</p>
+                        <div>
+                        <button style="max-width:300px; border:none; background-color: transparent; position:absolute">
+                            <p style="font-size: 15px; font-weight: bold; border:2px black solid;background-color: white;">The HUMSS strand shapes senior high school students with the necessary skills and knowledge on humanities and social sciences like psychology, sociology, and more. Our students reap the benefits of a HUMSS strand by developing skills like communication, open-mindedness, and a good understanding of the sociological and cultural nuances of the world around them. From there, they can examine and analyze how these shape and mold society’s ideas and ideologies in media, art, politics, and more. The senior high school HUMSS strand equips students with additional benefits, including:</p>
+                        </button>
+                        <img src="humss.jpg" alt="humss.jpg" width="560" style="position: relative; margin-left:340px;border: 2px black solid">
+                    </div>
+                    </div>
+                    <div id="gass" style="display:none;">
+                        <p class="strand">GAS(General Academic Strand)</p>
+                        <p>Senior high school (SHS) aims to prepare students with the skills and competencies they need for their desired college courses. This is why many SHS students choose to take up strands that have specialized subjects. However, there will always be students who are still undecided about what they will be taking up at the tertiary level and what career they want to pursue. That’s why the GAS strand in SHS in the Philippines was designed.</p>
+                        <p>The GAS strand is created to cater to students who prefer a broader range of studies rather than specific fields. It offers SHS students the flexibility to choose electives from various strands, which helps in choosing a university degree. This article provides an overview of this strand including some courses that they can take for successful career paths in the future. </p>
+                       
+                        <p style="font-size:20px; font-weight: bold;">Education</p>
+                        <p>If you’re passionate about the next generation of students like you, pursue an education course. Since GAS has a good mix of subjects, students can pursue education courses in college. Depending on your interests, you can choose an education course that’s specific to a group of students (e.g., preschool, elementary, children with special needs) and subject of your choice (e.g., Mathematics, Science, English). A degree in education can lead to a career as a teacher, school administrator, private tutor, and even as a training officer in companies.</p>
+                        <p><strong>Here are some education courses you can consider:</strong></p>
+                        <ul>
+                            <li>Bachelor of General Education</li>
+                            <li>Bachelor of Elementary Education</li>
+                            <li>Bachelor of Early Childhood Education</li>
+                            <li>Bachelor of Special Needs Education</li>
+                            <li>Bachelor of Secondary Education</li>
+                        </ul>
+                        <p style="font-size:20px; font-weight: bold;">Management</p>
+                        <p>GAS covers subjects like disaster readiness and risk management, applied economics, and organization and management. Kung mahilig ka sa organization or enjoy planning in general, you can pursue a management course in college. Management courses will teach you how to plan, organize, and execute projects in any given field. From logistics to operations. With a management degree, maaari kang magtrabaho bilang project manager/coordinator, human resource manager, and administrative supervisor among others.</p>
+                        <p><strong>Here are some management courses you can choose from:</strong></p>
+                        <ul>
+                            <li>BS Environmental Management</li>
+                            <li>BSBA Operations Management</li>
+                            <li>BA Management Economics</li>
+                            <li>BS Management Information Systems</li>
+                            <li>BS Applied Economics</li>
+                        </ul>
+                    </div>
+
+                    <div id="he" style="display:none;padding:120px;font-size:50px">
+                        <p style="justify-content: center; text-align: center; color:red;"><strong>Sorry we still dont have this strand in this school branch!</strong></p>
+                        
+                    </div>
+
+                    <div id="ia" style="display:none;padding:120px;font-size:50px">
+                        <p style="justify-content: center; text-align: center; color:red;"><strong>Sorry we still dont have this strand in this school branch!</strong></p>
+                        
+                    </div>
+                    
+                    <div id="afa" style="display:none;padding:120px;font-size:50px">
+                        <p style="justify-content: center; text-align: center; color:red;"><strong>Sorry we still dont have this strand in this school branch!</strong></p>
+                        
+                    </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myEnrollment" style="display:none;background-color: lightblue;">
+            <hr>
+            <p style="justify-content: center; text-align: center; color:red;"><strong>Sorry we found an error in enrollment!</strong></p>
+            <img src="maintenance.jpg" alt="maintenance.jpg" width="1000px" height="500px" style="margin-left: 160px;border:2px black solid">
+            <hr>
+        </div>
+    
+    <div id="downBar" style="position:relative;padding:20px; background-color: black; margin-top: -58px; color:white;" >
+        <button class="downBarInfo">
+        <p style="color:white; font-weight: bold; font-size: 25px;">GROWBOX SCHOOL</p>
+            <p style="line-height: 1.3;">GrowBox BoxGrow Street<br>
+            Grow 0th Ave Box, GrowBox<br>
+            0000 Metro Box, Philippines</p>
+            <p><strong>Phone</strong>: +631 - 3242892 / +631 - 3242895<br>
+            <strong>Email</strong>: @growbox-boxbox.pinkward.shaco</p>
+        </button>
+        <button class="downBarInfo">
+            <span class="downBarP">
+                <p style="color:white;">Inquiry Form</p>
+                <p onclick="showEnrollment()"><strong class="arrowInfo">></strong> GrowBox Enrollment Form</p>
+                <p><strong class="arrowInfo">></strong> Academic Office</p>
+                <p><strong class="arrowInfo">></strong> Accounting Matters</p>
+                <p><strong class="arrowInfo">></strong> Alumni Association</p>
+                <p><strong class="arrowInfo">></strong> Daily Consultation</p>
+                <p><strong class="arrowInfo">></strong> Graduate School</p>
+            </span>
+        </button>
+        <button class="downBarInfo">
+            <span class="downBarP">
+                <p><strong class="arrowInfo">></strong> Guidance Council</p>
+                <p><strong class="arrowInfo">></strong> Library</p>
+                <p><strong class="arrowInfo">></strong> Registrar Office</p>
+                <p><strong class="arrowInfo">></strong> Student Affairs</p>
+                <p><strong class="arrowInfo">></strong> GrowBox Connect</p>
+            </span>
+        </button>
+        <button class="downBarInfo">
+            <p style="color:white;">Useful Links</p>
+            <span class="downBarP">
+                <p><strong class="arrowInfo">></strong> GrowBox City</p>
+                <p><strong class="arrowInfo">></strong> Commission on Higher Education</p>
+                <p><strong class="arrowInfo">></strong> GROWBOX</p>
+            </span>
+        </button>
+    </div>
+    <script>
+        function showSubject(elem){ 
+            var stem = document.getElementById("stem");
+            var ict = document.getElementById("ict");
+            var abm = document.getElementById("abm");
+            var humss = document.getElementById("humss");
+            var gas = document.getElementById("gass");
+            var he = document.getElementById("he");
+            var ia = document.getElementById("ia");
+            var afa = document.getElementById("afa");
+            var page1 = document.getElementById("academicPage");
+            
+            if (elem.id == "ictButton"){
+                document.getElementById("downBar").style.marginTop = "-20px";
+                ict.style.display = "block";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+            }
+            else if (elem.id == "abmButton"){
+                ict.style.display = "none";
+                abm.style.display = "block";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "0";   
+            }
+            else if (elem.id == "humssButton"){
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "block";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "0";
+            }
+            else if (elem.id == "gasButton"){
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "block";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "-15px";
+            }
+            else if (elem.id == "heButton"){
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "block";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "0";
+            }
+            else if (elem.id == "iaButton"){
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "block";
+                afa.style.display = "none";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "0";
+            }
+            else if (elem.id == "afaButton"){
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "block";
+                stem.style.display = "none";
+                page1.style.display = "none";
+                document.getElementById("downBar").style.marginTop = "0";
+            }
+            else if (elem.id == "stemButton"){
+                document.getElementById("downBar").style.marginTop = "-16px";
+                ict.style.display = "none";
+                abm.style.display = "none";
+                humss.style.display = "none";
+                gas.style.display = "none";
+                he.style.display = "none";
+                ia.style.display = "none";
+                afa.style.display = "none";
+                stem.style.display = "block";
+                page1.style.display = "none";
+            }
+        }
+        
+        function arrowButton(elem){
+            var x = document.getElementById("firstPage");
+            var y = document.getElementById("secondPage");
+            var z = document.getElementById("thirdPage");
+            if(elem.id == "left"){
+                if(x.style.display == "block"){
+                y.style.display = "block";
+                x.style.display = "none";
+                z.style.display = "none";
+                }
+                else if(y.style.display == "block"){
+                    y.style.display = "none";
+                    x.style.display = "none";
+                    z.style.display = "block";
+                }
+                else{
+                    z.style.display = "none";
+                    y.style.display = "none";
+                    x.style.display = "block";
+                }
+            }
+            else if(elem.id == "right"){
+                if(x.style.display == "block"){
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "block";
+                }
+                else if(y.style.display == "block"){
+                    y.style.display = "none";
+                    x.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    z.style.display = "none";
+                    y.style.display = "block";
+                    x.style.display = "none";
+                } 
+            }
+        }
+        function showNavButton(elem){
+            var x = document.getElementById("frontImage");
+            var y = document.getElementById("myAbout");
+            var z = document.getElementById("myGuidelines");
+            var c = document.getElementById("myAcademics");
+            var v = document.getElementById("myEnrollment");
+            
+            if(elem.id == "btn1"){
+                document.getElementById("about").style.borderBottom = "thin solid white";
+                document.getElementById("enrollment").style.borderBottom = "none";
+                document.getElementById("academics").style.borderBottom = "none";
+                document.getElementById("guideline").style.borderBottom = "none";
+                document.getElementById("downBar").style.marginTop = "158px";   
+                
+                y.style.display = "block";
+                x.style.display = "none";
+                z.style.display = "none";
+                c.style.display = "none";
+                v.style.display = "none";
+            }
+            else if(elem.id == "btn2"){
+                document.getElementById("academics").style.borderBottom = "thin solid white";
+                document.getElementById("about").style.borderBottom = "none";
+                document.getElementById("enrollment").style.borderBottom = "none";
+                document.getElementById("guideline").style.borderBottom = "none";
+                document.getElementById("downBar").style.marginTop = "397px";
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "none";              
+                c.style.display = "block";
+                v.style.display = "none";
+            }
+            else if(elem.id == "btn3"){
+                document.getElementById("enrollment").style.borderBottom = "thin solid white";
+                document.getElementById("about").style.borderBottom = "none";
+                document.getElementById("academics").style.borderBottom = "none";
+                document.getElementById("guideline").style.borderBottom = "none";
+                document.getElementById("downBar").style.marginTop = "-8px";
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "none";
+                c.style.display = "none";
+                v.style.display = "block";
+            }
+            else if(elem.id == "btn4"){
+                document.getElementById("guideline").style.borderBottom = "thin solid white";
+                document.getElementById("about").style.borderBottom = "none";
+                document.getElementById("enrollment").style.borderBottom = "none";
+                document.getElementById("academics").style.borderBottom = "none";
+                document.getElementById("downBar").style.marginTop = "-88px";
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "block";
+                c.style.display = "none";
+                v.style.display = "none";
+            }
+            else if(elem.id == "home"){
+                document.getElementById("guideline").style.borderBottom = "none";
+                document.getElementById("about").style.borderBottom = "none";
+                document.getElementById("enrollment").style.borderBottom = "none";
+                document.getElementById("academics").style.borderBottom = "none";
+                document.getElementById("downBar").style.marginTop = "-58px";
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "none";
+                c.style.display = "none";
+                v.style.display = "none";
+            }
+        }
+        
+        
+    
+    </script>
+    
+
+    </body>
+</html>
